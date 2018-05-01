@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Simple Demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+</head>
+
+<body>
+
+    <main class="mdl-grid">
+        <div id="app">
+            <h2>Simple Message</h2>
+            {{ message }}
+
+            <h2>If condition</h2>
+            <span v-if="seen">Now you see me</span>
+
+            <h2>Lists</h2>
+
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                seen: true,
+                todos: [
+                    { text: 'Learn JavaScript' },
+                    { text: 'Learn Vue' },
+                    { text: 'Build something awesome' }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
